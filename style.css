@@ -73,7 +73,7 @@ body {
   font-weight: 500;
 }
 
-.about-btn {
+.home-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -87,12 +87,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.about-btn:hover {
+.home-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
 }
 
-.skills-btn {
+.services-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -106,12 +106,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.skills-btn:hover {
+.services-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
 }
 
-.experience-btn {
+.fields-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -125,7 +125,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.experience-btn:hover {
+.fields-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(34, 211, 238, 1.35);
 }
@@ -771,16 +771,16 @@ section {
   color: white;
 }
 
-/* Skills card styling */
-#skills .card {
+/* services card styling */
+#services .card {
   background: var(--card-bg);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: var(--text-main);
 }
 
-/* Dark mode override for skills cards */
-[data-theme="dark"] #skills .card {
+/* Dark mode override for services cards */
+[data-theme="dark"] #services .card {
   background: var(--card-bg);
   color: var(--text-muted);
   border: 1px solid rgba(255, 255, 255, 0.2);

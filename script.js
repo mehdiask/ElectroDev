@@ -17,6 +17,12 @@ toggle.addEventListener("click", () => {
   }
 });
 
+
+document.querySelector('.home-btn').addEventListener('click', function () {
+    window.location.href = 'https://www.electrodev.com/';
+  });
+
+
 // ===== SECTION FADE-IN ANIMATION =====
 const sections = document.querySelectorAll(".fade-in");
 
