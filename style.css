@@ -542,29 +542,29 @@ section {
   }
   
   /* Logo in top-left */
-
   .logo {
-    position: relative;
     width: auto;
     height: auto;
+    position: relative;
     isolation: isolate;
   }
 
+  /* Make sure logo image is visible */
   .logo img {
+    display: block;
     width: 28px;
     height: 28px;
     position: relative;
     z-index: 1;
   }
 
-  /* Light mode – border only */
+  /* Light mode shape */
   .logo::before {
     content: "";
     position: absolute;
 
     width: 46px;
     height: 26px;
-
     left: -9px;
     top: -6px;
 
@@ -580,6 +580,13 @@ section {
 
     z-index: 0;
     pointer-events: none;
+  }
+
+  /* Dark mode shape */
+  [data-theme="dark"] .logo::before {
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   }
 
   /* Dark mode – white filled shape */
