@@ -541,64 +541,51 @@ section {
     align-items: center;
   }
   
-  /* Logo in top-left */
-  .logo {
-    width: auto;
-    height: auto;
-    position: relative;
-    isolation: isolate;
-  }
+/* ===== LOGO ===== */
+.logo {
+  position: relative;
+  height: 0;          /* ⬅ prevents navbar from growing */
+  width: 0;
+}
 
-  /* Make sure logo image is visible */
-  .logo img {
-    display: block;
-    width: 28px;
-    height: 28px;
-    position: relative;
-    z-index: 1;
-  }
 
-  /* Light mode shape */
-  .logo::before {
-    content: "";
-    position: absolute;
+.logo img {
+  width: 150px; /* Your desired width */
+  height: 100px; /* Your desired height */
+  object-fit: contain;
+  position: absolute; /* Position it absolutely */
+  left: 70; /* Adjust to center horizontally */
+  top: -50px; /* Adjust to move it up (negative value) */
+}
+/* ===== DARK MODE LOGO BACKGROUND (NO LAYOUT IMPACT) ===== */
+[data-theme="dark"] .logo::before {
+  content: "";
+  position: absolute;
 
-    width: 46px;
-    height: 26px;
-    left: -9px;
-    top: -6px;
+  /* Match logo visual area */
+  width: 185px;
+  height: 50px;
 
-    background: transparent;
-    border: 1.5px solid #000;
+  inset: -26px -15px;  
 
-    clip-path: polygon(
-      12% 0%,
-      96% 0%,
-      90% 100%,
-      4% 100%
-    );
+  background: #ffffff;
 
-    z-index: 0;
-    pointer-events: none;
-  }
+  clip-path: polygon(
+    10% 0%,
+    96% 0%,
+    90% 100%,
+    4% 100%
+  );
 
-  /* Dark mode shape */
-  [data-theme="dark"] .logo::before {
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  }
+  z-index: 0;
+  pointer-events: none; /* safety */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
 
-  /* Dark mode – white filled shape */
-  [data-theme="dark"] .logo::before {
-    background: #ffffff;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  }
-  .logo span {
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
+[data-theme="dark"] .logo img {
+  position: relative;
+  z-index: 1;
+}
   
   /* Theme button in top-right */
   .theme-container {
